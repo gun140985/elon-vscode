@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>일론이 VS Code</title>
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-512.png">
+<meta name="theme-color" content="#007acc">
+<style>
+body{margin:0;font-family:system-ui,sans-serif;background:#1e1e1e;color:#eee;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.c{max-width:420px;text-align:center}
+a.b{display:block;background:#007acc;color:#fff;text-decoration:none;font-size:22px;font-weight:700;padding:18px;border-radius:14px;margin:20px 0}
+.s{background:#2d2d2d;border-radius:12px;padding:16px;text-align:left;line-height:1.7;font-size:16px}
+</style></head><body><div class="c">
+<img src="icon-192.png" width="96" height="96" alt="" style="border-radius:20px">
+<h1 style="font-size:24px">일론이 VS Code</h1>
+<div id="setup" class="s" hidden>
+<b>홈 화면 아이콘 만들기</b><br>
+1. 크롬 오른쪽 위 <b>⋮</b><br>
+2. <b>홈 화면에 추가</b> → <b>추가</b><br>
+이제 홈 화면 아이콘을 누르면 바로 PC 작업 공간이 열려요.
+</div>
+<a class="b" id="go" href="#">지금 열기</a>
+<p id="msg" style="color:#aaa"></p>
+</div>
+<script>
+var T="https://vscode.dev/tunnel/desktop-894kq6j/c:/Users/gun14/elon-remote.code-workspace?vscode-lang=ko";
+document.getElementById("go").href=T;
+var p=new URLSearchParams(location.search);
+if(p.has("setup")){document.getElementById("setup").hidden=false;history.replaceState(null,"",location.pathname);}
+else{document.getElementById("msg").textContent="PC로 연결하는 중…";location.replace(T);}
+</script>
+</body></html>
